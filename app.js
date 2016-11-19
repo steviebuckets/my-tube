@@ -22,7 +22,7 @@ $(document).ready(function() {
         // get the token and see
         console.log($('#next').data('next-token'), 'token');
     });
-    
+
     // write code for the previous button here
     $('#previous').on('click', function() {
         // get token
@@ -34,8 +34,8 @@ $(document).ready(function() {
         // get the token and see
         console.log($('#previous').data('previous-token'), 'token');
 
-    });    
- 
+    });
+
 });
 
 // Display search results
@@ -66,7 +66,7 @@ function getDataFromApi(query, token) {
         console.log(data.nextPageToken, 'token in getDataFromApi()');
         // next page 
         $('#next').attr("data-next-token", data.nextPageToken)
-        // previous page
+            // previous page
         $('#previous').attr("data-previous-token", data.prevPageToken)
         console.log('data', data);
         if (data.pageInfo.totalresults == 0) {

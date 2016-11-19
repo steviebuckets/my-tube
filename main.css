@@ -3,10 +3,9 @@ body {
 }
 
 body h1 {
-	font-family: 'Archivo Black';
-	color: #37474F;
+    font-family: 'Archivo Black';
+    color: #37474F;
 }
-
 
 ul {
     list-style: none;
@@ -64,4 +63,13 @@ footer {
     height: 40px;
     border-radius: 7px;
     border: 2px solid #37474F;
+}
+
+#search-input {
+    text-align: center;
+    font-size: 18px;
+}
+
+#previous, #next, #search {
+    background-color: #37474F;
 }
