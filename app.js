@@ -15,16 +15,27 @@ $(document).ready(function() {
     // write code for the next button here
     $('#next').on('click', function() {
         // get token
-        var token = $('#next').data("next-token")
+        var token = $('#next').attr("data-next-token")
             // use the token to getDataFromAPI
-            // look at line 6 through 8. write more code below.. up is fine.
 
         getDataFromApi(query, token);
         // get the token and see
         console.log($('#next').data('next-token'), 'token');
     });
+    
+    // write code for the previous button here
+    $('#previous').on('click', function() {
+        // get token
+        var token = $('#previous').attr("data-previous-token")
+            // use the token to getDataFromAPI
+            // look at line 6 through 8. write more code below.. up is fine.
 
+        getDataFromApi(query, token);
+        // get the token and see
+        console.log($('#previous').data('previous-token'), 'token');
 
+    });    
+ 
 });
 
 // Display search results
@@ -53,7 +64,10 @@ function getDataFromApi(query, token) {
         maxResults: 9
     }).done(function(data) {
         console.log(data.nextPageToken, 'token in getDataFromApi()');
+        // next page 
         $('#next').attr("data-next-token", data.nextPageToken)
+        // previous page
+        $('#previous').attr("data-previous-token", data.prevPageToken)
         console.log('data', data);
         if (data.pageInfo.totalresults == 0) {
             alert("No videos found!");
